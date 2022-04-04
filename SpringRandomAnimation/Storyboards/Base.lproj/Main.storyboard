@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SpringRandomAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24C-xW-3JR" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="48" y="20" width="224" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-pq-KQ9">
+                                        <rect key="frame" x="8" y="8" width="31" height="112"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-qX-0Sa">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYU-Nk-TVo">
+                                                <rect key="frame" x="0.0" y="24" width="31" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3j-Cp-km2">
+                                                <rect key="frame" x="0.0" y="48" width="31" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esv-hU-IUx">
+                                                <rect key="frame" x="0.0" y="72" width="31" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYk-GN-xDb">
+                                                <rect key="frame" x="0.0" y="96" width="31" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="Jta-pq-KQ9" firstAttribute="top" secondItem="24C-xW-3JR" secondAttribute="top" constant="8" id="4Oy-Jr-MeI"/>
+                                    <constraint firstAttribute="height" constant="128" id="Vpk-Vi-1Xg"/>
+                                    <constraint firstItem="Jta-pq-KQ9" firstAttribute="leading" secondItem="24C-xW-3JR" secondAttribute="leading" constant="8" id="aDZ-ea-rdI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jta-pq-KQ9" secondAttribute="bottom" constant="8" id="gTW-g7-7gL"/>
+                                    <constraint firstItem="Jta-pq-KQ9" firstAttribute="centerY" secondItem="24C-xW-3JR" secondAttribute="centerY" id="wRD-nR-JBN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-5G-kZE" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="48" y="429" width="224" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Run"/>
+                                <connections>
+                                    <action selector="runTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MDI-2V-KVx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="24C-xW-3JR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PTU-e1-zBx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j8D-5G-kZE" secondAttribute="bottom" constant="20" id="ezB-Dg-WxX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="24C-xW-3JR" secondAttribute="trailing" constant="48" id="fHP-oV-njU"/>
+                            <constraint firstItem="j8D-5G-kZE" firstAttribute="width" secondItem="24C-xW-3JR" secondAttribute="width" id="fbp-Zs-EDY"/>
+                            <constraint firstItem="24C-xW-3JR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="mRZ-NZ-eVl"/>
+                            <constraint firstItem="j8D-5G-kZE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nIw-7c-DAI"/>
+                            <constraint firstItem="24C-xW-3JR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xke-f5-qsj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="runBT" destination="j8D-5G-kZE" id="cgu-I8-S8U"/>
+                        <outletCollection property="animationPropertyLB" destination="ukl-qX-0Sa" collectionClass="NSMutableArray" id="M6y-Pe-9Ib"/>
+                        <outletCollection property="animPropertyLB" destination="Esv-hU-IUx" collectionClass="NSMutableArray" id="JLM-ES-Obd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
