@@ -12,7 +12,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SpringRandomAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SpringRandomAnimation" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,9 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="runBT" destination="j8D-5G-kZE" id="cgu-I8-S8U"/>
-                        <outletCollection property="animationPropertyLB" destination="ukl-qX-0Sa" collectionClass="NSMutableArray" id="M6y-Pe-9Ib"/>
-                        <outletCollection property="animPropertyLB" destination="Esv-hU-IUx" collectionClass="NSMutableArray" id="JLM-ES-Obd"/>
+                        <outlet property="viewToAnimate" destination="24C-xW-3JR" id="rXP-CE-9cE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
