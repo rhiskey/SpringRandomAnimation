@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //showAnimationProperties()
+        showAnimationProperties()
     }
     
     @IBAction func runTouched(_ sender: SpringButton) {
@@ -30,7 +30,8 @@ class MainViewController: UIViewController {
         
         let nextAnimationName = SpringAnimation.getRandomAnimation()
         animation = nextAnimationName
-        //sender.setTitle("Run \(nextAnimationName.preset)", for: .normal)
+        sender.setTitle("Run \(nextAnimationName.preset)", for: .normal)
+        showAnimationProperties()
         
         // Show next anim name on click
 
