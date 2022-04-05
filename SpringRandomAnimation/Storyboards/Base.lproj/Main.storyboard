@@ -92,6 +92,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="curveLB" destination="WYU-Nk-TVo" id="AHT-VY-tat"/>
+                        <outlet property="delayLB" destination="Esv-hU-IUx" id="SlA-6t-OYr"/>
+                        <outlet property="durationLB" destination="GYk-GN-xDb" id="klR-Q9-BC5"/>
+                        <outlet property="forceLB" destination="r3j-Cp-km2" id="4Te-Io-q3z"/>
+                        <outlet property="presetLB" destination="ukl-qX-0Sa" id="gAk-EK-Xsd"/>
                         <outlet property="viewToAnimate" destination="24C-xW-3JR" id="rXP-CE-9cE"/>
                     </connections>
                 </viewController>

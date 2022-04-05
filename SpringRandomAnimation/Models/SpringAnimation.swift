@@ -30,4 +30,31 @@ extension SpringAnimation {
             delay: 0.30
         )
     }
+    
+    static func getRandomAnimation(from dm: DataManager) -> SpringAnimation {
+        let presets = dm.presets.shuffled()
+        let curves = dm.curves.shuffled()
+        
+        return SpringAnimation(
+            preset: presets.first ?? "fadeInRight",
+            curve: curves.first ?? "linear",
+            force: Double.random(in: 1.0 ..< 2.0),
+            duration: Double.random(in: 1.0 ..< 2.0),
+            delay: 0.30
+        )
+    }
+    
+    static func getAnimationList() -> [SpringAnimation] {
+        let dm = DataManager.shared
+        
+        var animations: [SpringAnimation]?
+        
+        for _ in 1..<10 {
+            let animation = getRandomAnimation(from: dm)
+            
+            animations?.append(animation)
+        }
+        
+        return animations ?? []
+    }
 }

@@ -7,20 +7,30 @@
 
 import Spring
 
-class MainViewController: UIViewController {
-    
-//    @IBOutlet var animPropertyLB: [UILabel]!
+protocol AnimationProtocol {
+    var animation: SpringAnimation { get set }
+    func showAnimationProperties(for animation: SpringAnimation)
+}
+
+class MainViewController: UIViewController, AnimationProtocol {
+    @IBOutlet var presetLB: UILabel!
+    @IBOutlet var curveLB: UILabel!
+    @IBOutlet var forceLB: UILabel!
+    @IBOutlet var delayLB: UILabel!
+    @IBOutlet var durationLB: UILabel!
     
     @IBOutlet var viewToAnimate: SpringView!
     
-    var animation = SpringAnimation.getRandomAnimation()
+    var animation: SpringAnimation = SpringAnimation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showAnimationProperties()
+        showAnimationProperties(for: animation)
     }
     
     @IBAction func runTouched(_ sender: SpringButton) {
+        showAnimationProperties(for: animation)
+
         viewToAnimate.animation = animation.preset
         viewToAnimate.curve = animation.curve
         viewToAnimate.force = animation.force
@@ -31,38 +41,22 @@ class MainViewController: UIViewController {
         let nextAnimationName = SpringAnimation.getRandomAnimation()
         animation = nextAnimationName
         sender.setTitle("Run \(nextAnimationName.preset)", for: .normal)
-        showAnimationProperties()
-        
-        // Show next anim name on click
+    }
 
-        // apply animation
-        
-        // randomize next
-    }
-    
-    private func showAnimationProperties() {
-        
-//        for (label, anim) in zip(animPropertyLB, animation) {
-//            label.text = anim
-//        }
-        
-//        for index in 0..<4 {
-//            switch index{
-//            case 0:
-//                animPropertyLB[index].text = animation.preset
-//            case 1:
-//                animPropertyLB[index].text = animation.curve
-//            case 2:
-//                animPropertyLB[index].text = "\(animation.force)" // Format to %0.2f
-//            case 3:
-//                animPropertyLB[index].text = "\(animation.duration)"
-//            default:
-//                animPropertyLB[index].text = "\(animation.delay)"
-//            }
-//        }
-        
-    }
 }
 
-
+extension MainViewController {
+    func showAnimationProperties(for animation: SpringAnimation) {
+        presetLB.text = "Preset: \(animation.preset)"
+        curveLB.text = "Curve: \(animation.curve)"
+        forceLB.text = "Force: \(string(value: animation.force))"
+        delayLB.text = "Delay: \(string(value: animation.delay))"
+        durationLB.text = "Duration: \(string(value: animation.duration))"
+    }
+    
+    func string(value: Double) -> String
+    {
+        return String(format: "%.2f", value)
+    }
+}
 

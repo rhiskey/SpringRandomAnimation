@@ -11,9 +11,18 @@ class DataManager {
     
     static let shared = DataManager()
     
-    let presets = ["fadeInRight", "fadeInLeft", "flipX", "pop", "fall", "squeezeRight", "fadeInDown"]
-
-    let curves = ["easeInQuad", "easeInOutSine", "easeInCubic", "easeInExpo", "easeInOutQuad", "easeIn", "linear", "easeOutCirc"]
-
+    let presets = [
+        "fadeInRight", "fadeInLeft", "flipX", "pop",
+        "fall", "squeezeRight", "fadeInDown", "shake",
+        "morph", "squeeze", "wobble", "swing",
+        "slideLeft", "zoomIn", "flash"
+    ]
+    
+    let curves = [
+        "easeInOut", "easeOut", "easeInCubic", "easeInExpo",
+        "easeInOutQuad", "easeIn", "linear", "easeOutCirc",
+        "spring", "linear", "easeIn"
+    ]
+    
     private init() {}
 }
