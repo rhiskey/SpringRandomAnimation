@@ -45,6 +45,7 @@ class MainViewController: UIViewController, AnimationProtocol {
 
 }
 
+// MARK: - Animation Properties Labels
 extension MainViewController {
     func showAnimationProperties(for animation: SpringAnimation) {
         presetLB.text = "Preset: \(animation.preset)"
