@@ -7,21 +7,14 @@
 
 import Spring
 
-protocol AnimationProtocol {
-    var animation: SpringAnimation { get set }
-    func showAnimationProperties(for animation: SpringAnimation)
-}
 
-class MainViewController: UIViewController, AnimationProtocol {
-    @IBOutlet var presetLB: UILabel!
-    @IBOutlet var curveLB: UILabel!
-    @IBOutlet var forceLB: UILabel!
-    @IBOutlet var delayLB: UILabel!
-    @IBOutlet var durationLB: UILabel!
+class MainViewController: UIViewController {
     
+    
+    @IBOutlet var animParamsDescriptionLB: UILabel!
     @IBOutlet var viewToAnimate: SpringView!
-    
-    var animation: SpringAnimation = SpringAnimation.getRandomAnimation()
+
+    var animation = SpringAnimation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +23,7 @@ class MainViewController: UIViewController, AnimationProtocol {
     
     @IBAction func runTouched(_ sender: SpringButton) {
         showAnimationProperties(for: animation)
-
+        
         viewToAnimate.animation = animation.preset
         viewToAnimate.curve = animation.curve
         viewToAnimate.force = animation.force
@@ -42,22 +35,24 @@ class MainViewController: UIViewController, AnimationProtocol {
         animation = nextAnimationName
         sender.setTitle("Run \(nextAnimationName.preset)", for: .normal)
     }
-
+    
 }
 
 // MARK: - Animation Properties Labels
 extension MainViewController {
     func showAnimationProperties(for animation: SpringAnimation) {
-        presetLB.text = "Preset: \(animation.preset)"
-        curveLB.text = "Curve: \(animation.curve)"
-        forceLB.text = "Force: \(string(value: animation.force))"
-        delayLB.text = "Delay: \(string(value: animation.delay))"
-        durationLB.text = "Duration: \(string(value: animation.duration))"
+        animParamsDescriptionLB.text =
+        """
+            Preset: \(animation.preset)
+            Curve: \(animation.curve)
+            Force: \(string(value: animation.force))
+            Delay: \(string(value: animation.delay))
+            Duration: \(string(value: animation.duration))
+        """
     }
     
-    func string(value: Double) -> String
-    {
-        return String(format: "%.2f", value)
+    func string(value: Double) -> String {
+        String(format: "%.2f", value)
     }
 }
 
