@@ -10,9 +10,9 @@ import Foundation
 struct SpringAnimation {
     let preset: String
     let curve: String
-    let force: Double
-    let duration: Double
-    let delay: Double
+    let force: Float
+    let duration: Float
+    let delay: Float
     
     var description: String {
         """
@@ -27,17 +27,12 @@ struct SpringAnimation {
 
 extension SpringAnimation {
     static func getRandomAnimation() -> SpringAnimation {
-        let dm = DataManager.shared
-        
-        let presets = dm.presets.shuffled()
-        let curves = dm.curves.shuffled()
-        
-        return SpringAnimation(
-            preset: presets.first ?? "fadeInRight",
-            curve: curves.first ?? "linear",
-            force: Double.random(in: 1.0 ..< 2.0),
-            duration: Double.random(in: 1.0 ..< 2.0),
-            delay: 0.30
+        SpringAnimation(
+            preset: DataManager.shared.animations.randomElement()?.rawValue ?? "slideLeft",
+            curve: DataManager.shared.curves.randomElement()?.rawValue ?? "easeIn",
+            force: Float.random(in: 1...2),
+            duration: Float.random(in: 1...2),
+            delay: 0.3
         )
     }
 }
