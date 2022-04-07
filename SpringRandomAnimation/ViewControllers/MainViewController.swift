@@ -10,49 +10,31 @@ import Spring
 
 class MainViewController: UIViewController {
     
-    
+    // MARK: - IB Outlets
     @IBOutlet var animParamsDescriptionLB: UILabel!
     @IBOutlet var viewToAnimate: SpringView!
 
-    var animation = SpringAnimation.getRandomAnimation()
+    // MARK: - Private properties
+    private var animation = SpringAnimation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showAnimationProperties(for: animation)
+        animParamsDescriptionLB.text = animation.description
     }
     
+    // MARK: - IB Actions
     @IBAction func runTouched(_ sender: SpringButton) {
-        showAnimationProperties(for: animation)
+        animParamsDescriptionLB.text = animation.description
         
         viewToAnimate.animation = animation.preset
         viewToAnimate.curve = animation.curve
-        viewToAnimate.force = animation.force
-        viewToAnimate.delay = animation.delay
-        viewToAnimate.duration = animation.duration
+        viewToAnimate.force = CGFloat(animation.force)
+        viewToAnimate.delay = CGFloat(animation.delay)
+        viewToAnimate.duration = CGFloat(animation.duration)
         viewToAnimate.animate()
         
-        let nextAnimationName = SpringAnimation.getRandomAnimation()
-        animation = nextAnimationName
-        sender.setTitle("Run \(nextAnimationName.preset)", for: .normal)
+        animation = SpringAnimation.getRandomAnimation()
+        sender.setTitle("Run \(animation.preset)", for: .normal)
     }
     
 }
-
-// MARK: - Animation Properties Labels
-extension MainViewController {
-    func showAnimationProperties(for animation: SpringAnimation) {
-        animParamsDescriptionLB.text =
-        """
-            Preset: \(animation.preset)
-            Curve: \(animation.curve)
-            Force: \(string(value: animation.force))
-            Delay: \(string(value: animation.delay))
-            Duration: \(string(value: animation.duration))
-        """
-    }
-    
-    func string(value: Double) -> String {
-        String(format: "%.2f", value)
-    }
-}
-
